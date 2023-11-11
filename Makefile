@@ -1,4 +1,4 @@
-CC=/usr/bin/gcc
+CC=gcc
 PREFIX=/usr
 
 CFILES=$(wildcard src/*.c)
