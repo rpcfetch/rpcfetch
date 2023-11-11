@@ -95,6 +95,12 @@ make install
 nix profile install github:rpcfetch/rpcfetch
 ```
 
+Or try it out without installing:
+
+```sh
+nix run github:rpcfetch/rpcfetch -- --help
+```
+
 ## Other awesome Discord Rich Presence alternatives
 
 - [trickybestia/linux-discord-rich-presence](https://github.com/trickybestia/linux-discord-rich-presence) - Customizable Discord Rich Presence client for Linux - Rust. What else can I say about it?
