@@ -1,0 +1,5 @@
+build/
+lib/*
+tmp/
+include/discord_game_sdk.h
+.vscode/
