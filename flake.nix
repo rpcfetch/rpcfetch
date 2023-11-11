@@ -21,7 +21,6 @@
           src = ./.;
 
           buildInputs = with pkgs; [
-            curl
             cjson
             gcc
             pcre2
@@ -33,7 +32,6 @@
           buildPhase = ''
             cp -r ${pkgs.discord-gamesdk}/lib .
             cp -r ${pkgs.discord-gamesdk.dev}/lib/include .
-            make offline
           '';
 
           makeFlags = with pkgs; [
