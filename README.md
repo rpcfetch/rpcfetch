@@ -89,6 +89,12 @@ make install
 > [!NOTE]
 > This will also install the Discord Game SDK library.
 
+### Nix
+
+```sh
+nix profile install github:rpcfetch/rpcfetch
+```
+
 ## Other awesome Discord Rich Presence alternatives
 
 - [trickybestia/linux-discord-rich-presence](https://github.com/trickybestia/linux-discord-rich-presence) - Customizable Discord Rich Presence client for Linux - Rust. What else can I say about it?
