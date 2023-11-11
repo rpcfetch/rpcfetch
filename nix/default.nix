@@ -3,7 +3,7 @@ let
 in
 pkgs.stdenv.mkDerivation {
   pname = "rpcfetch";
-  version = "0.0.1";
+  version = "0.1.0";
   src = ../.;
 
   buildInputs = with pkgs; [
@@ -19,7 +19,9 @@ pkgs.stdenv.mkDerivation {
   buildPhase = ''
     cp -r ${pkgs.discord-gamesdk}/lib .
     cp -r ${pkgs.discord-gamesdk.dev}/lib/include .
+    make offline
   '';
+
   makeFlags = with pkgs; [
     "PREFIX=$(out)"
   ];
