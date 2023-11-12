@@ -35,6 +35,7 @@
 
           makeFlags = with pkgs; [
             "PREFIX=$(out)"
+            "CC=gcc"
           ];
         };
         defaultPackage = packages.rpcfetch;
