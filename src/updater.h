@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "cjson/cJSON.h"
+#include "cJSON.h"
 #include "logger.h"
 #include "semver.h"
 #include "version.h"

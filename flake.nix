@@ -21,7 +21,6 @@
           src = ./.;
 
           buildInputs = with pkgs; [
-            cjson
             curl
             gcc
             pcre2
@@ -43,7 +42,6 @@
         devShells.default = pkgs.mkShell {
           name = "rpcfetch development shell";
           buildInputs = with pkgs; [
-            cjson
             curl
             gcc
             gnumake
