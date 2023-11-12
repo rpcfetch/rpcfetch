@@ -22,6 +22,7 @@
 
           buildInputs = with pkgs; [
             cjson
+            curl
             gcc
             pcre2
             unzip
