@@ -25,8 +25,6 @@
             curl
             gcc
             pcre2
-            unzip
-            wget
             xorg.libX11.dev
           ];
 
@@ -40,6 +38,20 @@
           ];
         };
         defaultPackage = packages.rpcfetch;
+
+        devShells.default = pkgs.mkShell {
+          name = "rpcfetch development shell";
+          buildInputs = with pkgs; [
+            cjson
+            curl
+            gcc
+            gnumake
+            pcre2
+            unzip
+            wget
+            xorg.libX11.dev
+          ];
+        };
       }
     ));
 }
