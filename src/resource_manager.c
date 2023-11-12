@@ -291,15 +291,15 @@ int append_missing_names(char *file, char *name) {
   FILE *fp;
   char *line;
   size_t len;
-  char line_to_append[strlen(name) + 1];
+  char *line_to_append;
 
   line = NULL; // setting this to null will require freeing it after getline()
 
-  sprintf(line_to_append, "%s\n", name);
-
-  if (!file || !(name)) {
+  if (file == NULL || name == NULL || file[0] == '\0' || name[0] == '\0') {
     return 0;
   }
+
+  log_msg(INFO, "append_missing_names", 1, "Appending app name: %s", name);
 
   fp = fopen(file, "a+");
 
@@ -308,11 +308,16 @@ int append_missing_names(char *file, char *name) {
     return 0;
   }
 
+  size_t line_length = strlen(name) + 2;
+  line_to_append = malloc(line_length);
+  snprintf(line_to_append, line_length, "%s\n", name);
+
   while (getline(&line, &len, fp) >= 0) {
     if (strcmp(line, line_to_append) == 0) {
       log_msg(INFO, "append_missing_names", 1, "already found %s, skipping",
               name);
       free(line);
+      free(line_to_append);
       fclose(fp);
       return 2;
     }
@@ -320,6 +325,7 @@ int append_missing_names(char *file, char *name) {
 
   fputs(line_to_append, fp);
   free(line);
+  free(line_to_append);
   fclose(fp);
 
   return 1;
