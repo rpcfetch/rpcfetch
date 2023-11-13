@@ -7,7 +7,7 @@
 #define PCRE2_CODE_UNIT_WIDTH 8
 #include <pcre2.h>
 
-#include "cjson/cJSON.h"
+#include "cJSON.h"
 #include "logger.h"
 
 // TODO: user-defined fallback strings (in styles)
