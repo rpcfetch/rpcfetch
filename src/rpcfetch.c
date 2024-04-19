@@ -318,8 +318,7 @@ int main(int argc, char **argv) {
         if (should_update) {
           build_activity(&activity, windowname, window_url, usage_string,
                          os_name,
-                         "https://raw.githubusercontent.com/rpcfetch/resources/"
-                         "main/assets/os/tux.png",
+                         os_url,
                          uptime_epoch);
           app.activities->update_activity(app.activities, &activity, &app,
                                           UpdateActivityCallback);
